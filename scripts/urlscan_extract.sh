@@ -20,7 +20,7 @@ if command_exists "$PROG"; then
   tmux capture-pane -J \; \
     save-buffer "$TMPFILE" \; \
     delete-buffer \; \
-    split-window -p 40 "$PROG $ARGS $TMPFILE; trap 'rm -f $TMPFILE' EXIT"
+    split-window -l 40% "$PROG $ARGS $TMPFILE; trap 'rm -f $TMPFILE' EXIT"
 else
   tmux display-message "$PROG: command not found"
 fi
